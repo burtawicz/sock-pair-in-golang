@@ -1,5 +1,7 @@
 # Sock Pairing (in Golang)
 
+[![CircleCI](https://circleci.com/gh/burtawicz/sock-pair-in-golang/tree/main.svg?style=svg)](https://circleci.com/gh/burtawicz/sock-pair-in-golang/tree/main)
+
 ## :question: Why?
 Something I've always been curious about is defining algorithms for everyday activities.
 A few years ago I read [Algorithms to Live By - The Computer Science of Human Decisions](https://algorithmstoliveby.com/) by Brian Christian and Tom Griffiths. 
