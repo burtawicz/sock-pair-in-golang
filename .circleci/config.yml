@@ -1,0 +1,44 @@
+version: 2.1
+
+commands:
+  setup:
+    steps:
+      - run:
+          name: Adding GOPATH bin to PATH
+          command: echo 'export PATH="$PATH:$(go env GOPATH)/bin"' >> "$BASH_ENV"
+      - run:
+          name: Create test-reports dir
+          command: mkdir -p test-reports
+
+  cleanup:
+    steps:
+      - store_artifacts:
+          path: test-reports
+      - store_test_results:
+          path: test-reports
+
+
+jobs:
+  test:
+    docker:
+      - image: cimg/go:1.17.5
+    resource_class: small
+    working_directory: ~/project
+    steps:
+      - checkout:
+          path: ~/project
+      - setup
+      - run: go version
+      - run:
+          name: Execute tests
+          command: gotestsum --format testname --junitfile test-reports/gotestsum-report.xml
+      - run:
+          name: Execute benchmarks
+          command: go test -bench=. -count 10 -benchmem -short
+      - cleanup
+
+
+workflows:
+  ci:
+    jobs:
+      - test
