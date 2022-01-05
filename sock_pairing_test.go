@@ -280,7 +280,7 @@ func BenchmarkRandomPairingStrategy_pairSocks_noOrphans(b *testing.B) {
 	testSocks := ShuffleSocks(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		5,
+		10,
 		false,
 	))
 	for i := 0; i < b.N; i++ {
@@ -294,7 +294,7 @@ func BenchmarkRandomPairingStrategy_pairSocks_singleOrphan(b *testing.B) {
 	testSocks := ShuffleSocks(append(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		5,
+		10,
 		false,
 	), Sock{"pink", "plain", true}))
 	for i := 0; i < b.N; i++ {
@@ -308,7 +308,7 @@ func BenchmarkRandomPairingStrategy_pairSocks_allOrphans(b *testing.B) {
 	testSocks := ShuffleSocks(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		5,
+		10,
 		true,
 	))
 	for i := 0; i < b.N; i++ {
@@ -341,7 +341,7 @@ func BenchmarkSequentialPairingStrategy_pairSocks_noOrphans(b *testing.B) {
 	testSocks := ShuffleSocks(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		150,
+		10,
 		false,
 	))
 	for i := 0; i < b.N; i++ {
@@ -354,7 +354,7 @@ func BenchmarkSequentialPairingStrategy_pairSocks_singleOrphan(b *testing.B) {
 	testSocks := ShuffleSocks(append(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		150,
+		10,
 		false,
 	), Sock{"pink", "plain", true}))
 	for i := 0; i < b.N; i++ {
@@ -367,7 +367,7 @@ func BenchmarkSequentialPairingStrategy_pairSocks_allOrphans(b *testing.B) {
 	testSocks := ShuffleSocks(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		150,
+		10,
 		true,
 	))
 	for i := 0; i < b.N; i++ {
@@ -400,7 +400,7 @@ func BenchmarkSortFirstPairingStrategy_pairSocks_noOrphans(b *testing.B) {
 	testSocks := ShuffleSocks(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		150,
+		10,
 		false,
 	))
 	for i := 0; i < b.N; i++ {
@@ -413,7 +413,7 @@ func BenchmarkSortFirstPairingStrategy_pairSocks_singleOrphan(b *testing.B) {
 	testSocks := ShuffleSocks(append(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		150,
+		10,
 		false,
 	), Sock{"pink", "plain", true}))
 	for i := 0; i < b.N; i++ {
@@ -426,7 +426,7 @@ func BenchmarkSortFirstPairingStrategy_pairSocks_allOrphans(b *testing.B) {
 	testSocks := ShuffleSocks(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		150,
+		10,
 		true,
 	))
 	for i := 0; i < b.N; i++ {
@@ -459,7 +459,7 @@ func BenchmarkSurfacePairingStrategy_pairSocks_noOrphans(b *testing.B) {
 	testSocks := ShuffleSocks(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		150,
+		10,
 		false,
 	))
 	for i := 0; i < b.N; i++ {
@@ -472,7 +472,7 @@ func BenchmarkSurfacePairingStrategy_pairSocks_singleOrphan(b *testing.B) {
 	testSocks := ShuffleSocks(append(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		150,
+		10,
 		false,
 	), Sock{"pink", "plain", true}))
 	for i := 0; i < b.N; i++ {
@@ -485,7 +485,7 @@ func BenchmarkSurfacePairingStrategy_pairSocks_allOrphans(b *testing.B) {
 	testSocks := ShuffleSocks(GenerateSocks(
 		[]string{"red", "orange", "yellow", "green", "blue", "indigo", "violet"},
 		[]string{"plain", "checkered", "herringbone", "plaid", "striped"},
-		150,
+		10,
 		true,
 	))
 	for i := 0; i < b.N; i++ {
